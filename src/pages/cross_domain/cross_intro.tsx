@@ -2,6 +2,7 @@ import * as React from 'react';
 import './styles/cross_intro.less';
 import { Typography, Table, Button, message } from 'antd';
 import { test, test1 } from '../../service/cross_domain_server';
+import crossImage from '../../assests/images/cross_domain/cross_domain.png';
 
 const { Title, Paragraph, Text } = Typography;
 const columns = [
@@ -75,6 +76,9 @@ export class CrossIntro extends React.Component<{}, {}> {
                 <Paragraph>
                     所谓同源（即指在同一个域）就是两个页面具有相同的<Text code>协议（protocol）</Text>，<Text code>主机（host）</Text>和<Text code>端口号（port）</Text>。
                 </Paragraph>
+                <Paragraph>
+                    <img src={crossImage} />
+                </Paragraph>
                 <Title level={3}>二、什么是跨域</Title>
                 <Paragraph>
                     当一个请求url的<Text strong>协议</Text>、<Text strong>域名</Text>、<Text strong>端口</Text>三者之间任意一个与当前页面url不同即为跨域。
@@ -91,20 +95,12 @@ export class CrossIntro extends React.Component<{}, {}> {
                     3、<Text strong>无法向非同源地址发送 AJAX 请求</Text>
                 </Paragraph>
                 <Title level={3}>四、跨域示例</Title>
-                <Button onClick={this.clickHandler}>点我</Button>
-                <Button onClick={this.clickHandler1}>点我</Button>
+                <Button type="primary" onClick={this.clickHandler}>点我</Button>
             </Typography>
         )
     }
     clickHandler = () => {
         test().then(res => {
-            message.info(JSON.stringify(res.data));
-        }).catch(e => {
-            message.error(e.message);
-        })
-    }
-    clickHandler1 = () => {
-        test1().then(res => {
             message.info(JSON.stringify(res.data));
         }).catch(e => {
             message.error(e.message);

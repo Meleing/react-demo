@@ -5,7 +5,9 @@
   "author": "Meleing",
   "license": "MIT",
   "scripts": {
-    "start": "webpack -w"
+    "dev": "node build/build.js",
+    "start": "webpack-dev-server -w --progress",
+    "build": "webpack -w"
   },
   "dependencies": {
     "antd": "^4.2.4",
@@ -23,17 +25,21 @@
     "@types/react-router-dom": "^5.1.5",
     "@types/webpack": "^4.41.8",
     "awesome-typescript-loader": "^5.2.1",
+    "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^6.0.1",
     "css-loader": "^3.5.3",
     "eslint": "^6.8.0",
     "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.3.0",
     "less-loader": "^6.1.0",
+    "path": "^0.12.7",
     "source-map-loader": "^0.2.4",
     "style-loader": "^1.2.1",
     "tslint": "^6.1.2",
     "typescript": "^3.8.3",
     "url-loader": "^4.1.0",
     "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
   }
 }
